@@ -6,7 +6,8 @@ public class Warmup {
      * @return is the number th word of the sentence
      */
     public String wordFinder(String sentence, int number) {
-        return null;
+        String[] s = sentence.split(" ");
+        return (number > s.length) ? " Number = " + number + " is out Of Bound" : s[number-1];
     }
 
     /**
@@ -16,7 +17,16 @@ public class Warmup {
      * @return if searchForEven is true ? return the number of even numbers : return the number of odd numbers
      */
     public int oddEvenCounter(String number, boolean searchForEven) {
-        return -1;
+        int m=0;
+        char[] t = number.toCharArray();
+        for (int i=0;i<number.length();i++){
+            if (searchForEven==true) {
+                if (t[i]%2==0) m++;
+            } else {
+                if (t[i]%2==1) m++;
+            }
+        }
+        return m;
     }
 
     /**
@@ -25,6 +35,13 @@ public class Warmup {
      * @return The word that is first in alphabet column
      */
     public String firstWord(String wordA, String wordB) {
-        return null;
+        int j=0;
+        char[] a = wordA.toCharArray();
+        char[] b = wordB.toCharArray();
+        while (true) {
+            if (a[j]>b[j]) return wordB ;
+            else if (a[j]<b[j]) return wordA ;
+            else j++ ;
+        }
     }
 }
